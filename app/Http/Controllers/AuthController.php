@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -17,7 +15,7 @@ class AuthController extends Controller
     }
 
     // Vérification des informations
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request) 
     {
         // Vérification de la validité des informations
         $credentials = $request->validated();

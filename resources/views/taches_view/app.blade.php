@@ -14,7 +14,7 @@
     <div class="absolute top-0 flex justify-between w-full px-5 py-3 mx-0 bg-blue-200 shadow-md">
 
         {{-- Nom de l'application --}}
-        <div class="text-xl font-black xl:text-2xl">Check-Moi ça</div>
+        <div class="text-xl font-black xl:text-2xl lg:text-2xl md:text-2xl">Check-Moi ça</div>
 
         {{-- bouton déconnexion --}}
         <div class="flex items-center self-center gap-4 ">

@@ -26,4 +26,14 @@ class TacheRequest extends FormRequest
             'description' => ['string', 'max:500', 'required']
         ];
     }
+
+    // public function messages(): array
+    // {
+    //     return [
+    //         'titre.required' => 'Remplissez bien tous les champs.',
+    //         'titre.string' => 'Remplissez bien tous les champs.',
+    //         'description.required' => 'Remplissez bien tous les champs.',
+    //         'description.string' => 'Remplissez bien tous les champs.',
+    //     ];
+    // }
 }

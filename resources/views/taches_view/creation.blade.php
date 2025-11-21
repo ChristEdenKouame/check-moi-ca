@@ -9,7 +9,7 @@
     <form action="{{route('tache.store')}}" method="POST" >
         @csrf
         <h1 class="pb-2 text-2xl font-semibold text-red-700">
-                Création d'une nouvelles tache
+            Création d'une nouvelles tache
         </h1>
 
         <label for="titre">Titre</label>
@@ -30,7 +30,15 @@
         <input type="checkbox" name="statut">
         <label for="statut">Terminée ?</label>
         <br>
-
+        
+        {{-- @error('titre')
+            <div class="text-red-600 text-start">{{$message}}</div>
+        @enderror
+        
+        @error('description')
+            <div class="text-red-600 text-start">{{$message}}</div>
+        @enderror --}}
+        
         <button 
             type="submit" 
             class="w-32 py-1 font-semibold text-white bg-red-700 rounded-sm hover:cursor-pointer"
