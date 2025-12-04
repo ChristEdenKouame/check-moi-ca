@@ -6,6 +6,11 @@ use App\Http\Controllers\TacheController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
+// Page d'accueil
+Route::get('/', function () {
+    return view('accueil');
+})->name('accueil');
+
 // Recherche d'une tache 
 Route::post('/tache/searchById', [TaskController::class, 'searchById'])->name('searchById');
 
@@ -16,7 +21,7 @@ Route::get('/tache/enCours', [TaskController::class, 'current'])->name('enCours'
 Route::get('/tache/termine', [TaskController::class, 'finished'])->name('termine');
 
 // Taches
-Route::get('/', [TaskController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/index', [TaskController::class, 'index'])->name('index')->middleware('auth');
 Route::resource('/tache', TaskController::class)->middleware('auth');
 
 // Authentification

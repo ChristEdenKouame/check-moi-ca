@@ -52,7 +52,7 @@
         </thead>
 
         <tbody>
-            @foreach ($taches as $tache)
+            @forelse ($taches as $tache)
                 <tr class="border-b border-zinc-400">
                 <td class="px-2 py-1 text-start">{{$tache->titre}}</td>
                 <td class="px-2 py-1 text-start">{{$tache->description}}</td>
@@ -88,13 +88,18 @@
                         </button>
                     </form>
                 </td>
-                
             </tr>
-            @endforeach
-            
+            @empty
+            <tr>
+                <td colspan="4" class="py-2 text-center text-gray-600">
+                    Aucune tâche 
+                </td>
+            </tr>
+            @endforelse
         </tbody>
-
     </table>
+
 </div>
+
 
 @endsection

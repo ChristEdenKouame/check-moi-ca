@@ -15,7 +15,7 @@ class AuthController extends Controller
     }
 
     // Vérification des informations
-    public function login(LoginRequest $request) 
+    public function login(LoginRequest $request)
     {
         // Vérification de la validité des informations
         $credentials = $request->validated();
