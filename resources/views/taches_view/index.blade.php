@@ -7,7 +7,7 @@
 <div class="flex flex-col items-center justify-between mt-20 xl:px-25 xl:flex-row md:px-20 md:flex-row">
     <div class="flex flex-col items-center justify-center gap-5 xl:flex-row lg:flex-row lg:flex-start">
         {{-- Recherche de mot clé --}}
-        <form action="{{route('searchById')}}" method="POST" class="inline-block">
+        <form action="{{route('search')}}" method="POST" class="inline-block">
             @csrf
             <input type="search" name="search" placeholder="Mot clé" class="w-64 px-3 py-1 font-semibold border border-gray-500 rounded-lg" value="{{old('search', $search ?? '')}}">
             <button type="submit" class="px-2 py-1 font-semibold border rounded-lg hover:cursor-pointer text-zinc-700 border-zinc-500 hover:text-zinc-50 hover:bg-zinc-700" >Rechercher</button>

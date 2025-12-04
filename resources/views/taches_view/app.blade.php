@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
     @vite('resources/css/app.css')
     <title>@yield('titre', 'Mon App')</title>
 </head>
 
-<body class="bg-blue-100 text-zinc-700 ">
+<body class="bg-blue-100 text-zinc-700 font-['Unbounded'] text-sm">
     {{-- Top bar  --}}
     <div class="absolute top-0 flex justify-between w-full px-5 py-3 mx-0 bg-blue-200 shadow-md">
 
         {{-- Nom de l'application --}}
-        <div class="text-xl font-black xl:text-2xl lg:text-2xl md:text-2xl">Check-Moi ça</div>
+        <div class="text-xl font-black">Check-Moi ça</div>
 
         {{-- bouton déconnexion --}}
         <div class="flex items-center self-center gap-4 ">
-            <div class="text-xl font-bold">
+            <div class="text-lg font-bold">
                 @auth
                     {{Auth::user()->name}}
                 @endauth

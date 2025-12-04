@@ -23,13 +23,13 @@
         <label for="statut">Terminée ?</label>
         <br>
 
-        <button type="submit" class="w-32 py-1 font-semibold text-white bg-red-700 rounded-sm cursor-pointer hover:">
+        <button type="submit" class="w-32 py-1 text-white bg-red-700 rounded-sm cursor-pointer hover:">
             Modifier
         </button>
         
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 mt-4 font-semibold text-center text-white rounded bg-sky-700">
+            class="inline-block w-32 py-1 mt-4 text-center text-white rounded bg-sky-700">
             Retour
         </a>
     </form>

@@ -12,7 +12,7 @@ Route::get('/', function () {
 })->name('accueil');
 
 // Recherche d'une tache 
-Route::post('/tache/searchById', [TaskController::class, 'searchById'])->name('searchById');
+Route::post('/tache/search', [TaskController::class, 'search'])->name('search');
 
 // Taches en cours
 Route::get('/tache/enCours', [TaskController::class, 'current'])->name('enCours');

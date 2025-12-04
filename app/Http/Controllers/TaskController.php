@@ -57,6 +57,9 @@ class TaskController extends Controller
         return view('taches_view.modification', compact('tache'));
     }
 
+    /**
+     * Show a specicifical resource.
+     */
     public function show(Tache $tache)
     {
         return view('taches_view.detail', compact('tache'));
@@ -98,7 +101,7 @@ class TaskController extends Controller
      * Search a resource from storage.
      */
 
-    public function searchById(Request $request)
+    public function search(Request $request)
     {
         $search = $request->search;
         if (!$search) {
@@ -115,7 +118,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Display sinised tasks.
+     * Display finished tasks.
      */
     public function finished()
     {
