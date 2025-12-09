@@ -4,19 +4,19 @@
 
 @section('contenu')
 
-<div class="flex flex-col items-center justify-between mt-20 xl:px-25 xl:flex-row md:px-20 md:flex-row">
-    <div class="flex flex-col items-center justify-center gap-5 xl:flex-row lg:flex-row lg:flex-start">
+<div class="flex flex-col items-center justify-between gap-2 px-2 mx-2 mt-20 lg:mx-5 lg:flex-row sm:flex-row ">
+    <div class="flex flex-col justify-start gap-5 sm:flex-col md:items-start lg:items-center xl:flex-row lg:flex-row ">
         {{-- Recherche de mot clé --}}
-        <form action="{{route('search')}}" method="POST" class="inline-block">
+        <form action="{{route('search')}}" method="POST" class="flex flex-col justify-center gap-2 lg:flex-row sm:flex-row">
             @csrf
             <input type="search" name="search" placeholder="Mot clé" class="w-64 px-3 py-1 font-semibold border border-gray-500 rounded-lg" value="{{old('search', $search ?? '')}}">
-            <button type="submit" class="px-2 py-1 font-semibold border rounded-lg hover:cursor-pointer text-zinc-700 border-zinc-500 hover:text-zinc-50 hover:bg-zinc-700" >Rechercher</button>
+            <button type="submit" class="px-2 py-1 font-semibold duration-300 border rounded-lg hover:cursor-pointer border-zinc-500 hover:text-zinc-50 hover:bg-zinc-700" >Rechercher</button>
         </form>
-        <div class="flex gap-18 xl:gap-4 lg:gap-4 md:gap-15">
-            {{-- Taches spécifiques --}}
-            <a href="{{route('enCours')}}" class="font-semibold hover:text-yellow-500 whitespace-nowrap">En cours</a>
-            <a href="{{route('termine')}}" class="font-semibold hover:text-green-600">Terminées</a>
-            <a href="{{route('index')}}" class="font-semibold hover:text-sky-700">Toutes</a>
+        <div class="flex gap-2">
+            {{-- Filtre des taches --}}
+            <a href="{{route('enCours')}}" class="font-semibold hover:text-red-800">En cours</a>
+            <a href="{{route('termine')}}" class="font-semibold hover:text-red-800">Terminées</a>
+            <a href="{{route('index')}}" class="font-semibold hover:text-red-800">Tous</a>
         </div>
     </div>
 
@@ -24,28 +24,30 @@
         {{-- Lien vers formulaire de création de tache --}}
         <a 
             href="{{route('tache.create')}}" 
-            class="flex px-2 py-1 text-white rounded-sm shadow-md bg-sky-700 whitespace-nowrap">
+            class="flex items-center px-2 py-1 text-white rounded-lg shadow-md bg-red-800 whitespace-nowrap hover:scale-[1.01] duration-200">
             <span class="material-symbols-outlined">add</span>
-            Ajouter une tache
+            Ajouter un projet
         </a>
     </div>
 </div>
 
 {{-- Affichage de message en fonction de l'action effectuée --}}
 @if (session('message'))
-    <div class="mt-3 text-xl mx-30">
+    <div class="mx-5 mt-3 text-lg">
         <p>{{session('message')}} {{session('tache')}}</p>
     </div>
 @endif
 
 {{-- Affichages de la liste des ressources --}}
-<div class="flex justify-center mx-10 mt-3 text-center border rounded-sm shadow-lg xl:mx-25 md:mx-20 border-zinc-400">
-    <table class="relative w-full">
+<div class="flex justify-center mx-2 mt-3 overflow-x-auto text-xs text-center border rounded-sm shadow-lg lg:mx-5 border-zinc-400 sm:mx-5">
+    <table class="relative w-full ">
         
         <thead class="border-b border-zinc-400 ">
             <tr>
-                <th class="px-2 py-1 text-start">Titre</th>
-                <th class="px-2 py-1 text-start">Description</th>
+                <th class="px-2 py-2 text-start">Titre</th>
+                <th class="px-2 py-2 text-start">Description</th>
+                <th class="px-2 py-2 text-start">Client</th>
+                <th class="px-2 py-2 text-center whitespace-nowrap">Date de debut</th>
                 <th class="px-2 text-center">Statut</th>
                 <th class="px-2 text-center">Actions</th>
             </tr>
@@ -54,22 +56,24 @@
         <tbody>
             @forelse ($taches as $tache)
                 <tr class="border-b border-zinc-400">
-                <td class="px-2 py-1 text-start">{{$tache->titre}}</td>
-                <td class="px-2 py-1 text-start">{{$tache->description}}</td>
-                <td class="px-2 py-1">
+                <td class="px-2 py-2 text-start">{{$tache->titre}}</td>
+                <td class="px-2 py-2 text-start">{{$tache->description}}</td>
+                <td class="px-2 py-2 text-start">{{$tache->client}}</td>
+                <td class="px-2 py-2 text-center">{{$tache->created_at->format('d/m/Y')}}</td>
+                <td class="px-2 py-2 text-center">
                     @if ($tache->statut == 1)
-                    <span class="px-1 text-green-200 bg-green-600 rounded-lg whitespace-nowrap">Terminée</span>
+                    <span class="px-1 py-1 text-green-200 bg-green-600 rounded-lg whitespace-nowrap">Terminée</span>
                     @else
-                    <span class="px-1 text-yellow-100 bg-yellow-500 rounded-lg whitespace-nowrap">En cours</span>
+                    <span class="px-1 py-1 text-yellow-100 bg-yellow-500 rounded-lg whitespace-nowrap">En cours</span>
                     @endif
                 </td>
                 
                 {{-- Bontons d'actions --}}
-                <td class="flex items-center justify-center gap-2 py-1 ">
+                <td class="flex items-center justify-center gap-1 px-2 py-2 text-center">
                     
                     <a 
                         href="{{ route('tache.show', $tache->id) }}">
-                        <span class="text-gray-600 material-symbols-outlined">visibility</span>
+                        <span class="material-symbols-outlined">visibility</span>
                     </a>
                     
                     <a 
@@ -83,7 +87,7 @@
                         <button 
                             type="submit" 
                             class="hover:cursor-pointer" 
-                            onclick="return confirm('Voulez-vous vraiment supprimer la tache ?')">
+                            onclick="return confirm('Voulez-vous vraiment supprimer le projet ?')">
                             <span class="text-red-600 material-symbols-outlined">delete</span>
                         </button>
                     </form>
@@ -91,8 +95,8 @@
             </tr>
             @empty
             <tr>
-                <td colspan="4" class="py-2 text-center text-gray-600">
-                    Aucune tâche 
+                <td colspan="10" class="py-2 text-center text-gray-400">
+                    Aucun projet
                 </td>
             </tr>
             @endforelse

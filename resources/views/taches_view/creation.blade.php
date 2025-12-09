@@ -8,14 +8,13 @@
 <div class="items-center justify-center px-10 py-3 mx-10 mt-20 border rounded-lg shadow-lg xl:mx-25 border-zinc-400">
     <form action="{{route('tache.store')}}" method="POST" >
         @csrf
-        <h1 class="pb-2 text-2xl font-semibold text-red-700">
-            Création d'une nouvelles tache
+        <h1 class="pb-2 text-2xl font-semibold text-red-800">
+            Création d'un nouveau projet
         </h1>
 
-        <label for="titre">Titre</label>
+        <label for="titre">Nom du projet</label>
         <input 
             type="text" 
-            placeholder="Manger du Garba" 
             name="titre" 
             class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
         >
@@ -27,20 +26,27 @@
             class="w-full px-3 py-2 border border-gray-500 rounded-lg ">
         </textarea>
 
+        <label for="client">Client</label>
+        <input 
+            type="text" 
+            name="client" 
+            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
+        >
+
         <input type="checkbox" name="statut">
         <label for="statut">Terminée ?</label>
         <br>
 
         <button 
             type="submit" 
-            class="w-32 py-1 text-white bg-red-700 rounded-sm hover:cursor-pointer"
+            class="w-32 py-1 text-white bg-red-800 rounded-lg hover:cursor-pointer"
         >
             Ajouter
         </button>
 
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 mt-4 text-center text-white rounded bg-sky-700">
+            class="inline-block w-32 py-1 mt-4 text-center text-white bg-red-800 rounded-lg">
             Accueil
         </a>
     </form>

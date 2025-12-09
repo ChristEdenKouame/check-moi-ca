@@ -13,6 +13,8 @@ class Tache extends Model
     protected $fillable = [
         'titre',
         'description',
+        // 'expediteur',
+        'client',
         'statut',
         'user_id'
     ];

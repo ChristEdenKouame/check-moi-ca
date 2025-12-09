@@ -14,22 +14,39 @@
         </h1>
 
         <label for="titre">Titre</label>
-        <input type="text" placeholder="Manger du Garba" name="titre" class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg" value="{{old('titre', $tache->titre)}}">
+        <input 
+            type="text" 
+            name="titre" 
+            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg" 
+            value="{{old('titre', $tache->titre)}}"
+        >
         
         <label for="description">Description</label>
-        <textarea type="text"  name="description" class="w-full px-3 py-2 border border-gray-500 rounded-lg ">{{old('description',$tache->description)}}</textarea>
+        <textarea 
+            type="text"  
+            name="description" 
+            class="w-full px-3 py-2 border border-gray-500 rounded-lg ">{{old('description',$tache->description)}}
+        </textarea>
+
+        <label for="client">Client</label>
+        <input 
+            type="text"  
+            name="client" 
+            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg" 
+            value="{{old('titre', $tache->client)}}"
+        >
 
         <input type="checkbox" {{ $tache->statut ? 'checked' : ""}} name="statut">
         <label for="statut">Terminée ?</label>
         <br>
 
-        <button type="submit" class="w-32 py-1 text-white bg-red-700 rounded-sm cursor-pointer hover:">
+        <button type="submit" class="w-32 py-1 text-white bg-red-800 rounded-lg cursor-pointer ">
             Modifier
         </button>
         
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 mt-4 text-center text-white rounded bg-sky-700">
+            class="inline-block w-32 py-1 mt-4 text-center text-white bg-red-800 rounded-lg">
             Retour
         </a>
     </form>

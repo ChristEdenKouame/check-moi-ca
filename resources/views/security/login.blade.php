@@ -10,15 +10,14 @@
     <title>@yield('titre', 'Connexion')</title>
 </head>
 
-<body class="flex flex-col items-center justify-center h-screen bg-blue-100 text-zinc-700 font-['Unbounded']">
-<h1 class="text-center ">Bienvenue sur <span class="text-2xl font-black">Check-Moi ça</span> <br>
-Ici, gerez vos taches quotidiennes.</h1>
+<body class="flex flex-col items-center justify-center h-screen bg-black text-zinc-100 font-['Unbounded']">
+<h1 class="text-center ">Connectez-vous à votre <span class="text-2xl font-black">compte</span> <br>via le formulaire si dessous.</h1>
 
 <div>
-    <div class="px-6 py-6 mt-3 text-sm border rounded-lg shadow-lg border-zinc-400 w-90">
+    <div class="px-6 py-6 mt-3 text-sm border border-red-800 rounded-lg shadow-lg w-90">
         <form action="{{route('login.post')}}" method="POST" class="flex flex-col ">
             @csrf
-            <h2 class="pb-1 text-xl font-semibold text-center text-red-700">
+            <h2 class="pb-1 text-xl font-semibold text-center ">
                 Connexion
             </h2>
             @if (session('error'))
@@ -26,16 +25,16 @@ Ici, gerez vos taches quotidiennes.</h1>
             @endif
 
             <label for="email">Email</label>
-            <input type="email" name="email" class="w-full px-3 py-1 mb-1 border border-gray-500 rounded-lg" value="{{old('email')}}">
+            <input type="email" name="email" class="w-full px-3 py-2 mb-1 border border-gray-500 rounded-lg" value="{{old('email')}}">
             
             <label for="password">Mot de passe</label>
-            <input type="password" name="password" class="w-full px-3 py-1 mb-3 border border-gray-500 rounded-lg ">
+            <input type="password" name="password" class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg ">
             
-            <button type="submit" class="self-center w-full py-1 text-white bg-red-700 rounded-sm hover:cursor-pointer">
+            <button type="submit" class="self-center w-full py-2 text-white bg-red-800 rounded-lg hover:cursor-pointer">
                 Se connecter
             </button>
 
-            <a href="{{route('sign-up')}}" class="mt-2 text-sm text-red-700">Pas encore de compte ?</a>
+            <a href="{{route('sign-up')}}" class="mt-2 text-sm text-red-800">Pas encore de compte ?</a>
         </form>
     </div>
 </div>

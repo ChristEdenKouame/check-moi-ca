@@ -23,7 +23,8 @@ class TacheRequest extends FormRequest
     {
         return [
             'titre' => ['string', 'max:200', 'required'],
-            'description' => ['string', 'max:500', 'required']
+            'description' => ['string', 'max:500', 'required'],
+            'client' => ['string', 'max:200', 'nullable'],
         ];
     }
 

@@ -40,11 +40,12 @@ class TaskController extends Controller
         Auth::user()->taches()->create([
             'titre' => $request->titre,
             'description' => $request->description,
+            'client' => $request->client,
             'statut' => $request->statut == "on" ? 1 : 0
         ]);
 
         return redirect()->route('index')->with([
-            'message' => 'Tache enregistrée : ',
+            'message' => 'Projet enregistrée : ',
             'tache' => $request->titre
         ]);
     }
@@ -75,11 +76,12 @@ class TaskController extends Controller
         $tache->update([
             'titre' => $request->titre,
             'description' => $request->description,
+            'client' => $request->client,
             'statut' => $request->statut == "on" ? 1 : 0
         ]);
 
         return redirect()->route('index')->with([
-            'message' => 'Tache modifiée : ',
+            'message' => 'Projet modifiée : ',
             'tache' => $tache->titre
         ]);
     }
@@ -92,7 +94,7 @@ class TaskController extends Controller
         $tache->delete();
 
         return redirect()->route('index')->with([
-            'message' => 'Tache supprimée : ',
+            'message' => 'Projet supprimée : ',
             'tache' => $tache->titre
         ]);
     }
@@ -110,7 +112,8 @@ class TaskController extends Controller
             $taches = Tache::where('user_id', Auth::id())
                 ->where(function ($query) use ($search) {
                     $query->where('titre', 'LIKE', '%' . $search . '%')
-                        ->orWhere('description', 'LIKE', '%' . $search . '%');
+                        ->orWhere('description', 'LIKE', '%' . $search . '%')
+                        ->orWhere('client', 'LIKE', '%' . $search . '%');
                 })->get();
         }
 

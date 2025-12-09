@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('taches', function (Blueprint $table) {
-            $table->id();
-            $table->string('titre');
-            $table->text('description');
-            $table->tinyInteger('statut');
-            $table->timestamps();
+        Schema::table('taches', function (Blueprint $table) {
+            $table->text('client')->after('description')->nullable();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('taches');
+        Schema::table('taches', function (Blueprint $table) {
+            $table->dropColumn('client');
+        });
     }
 };

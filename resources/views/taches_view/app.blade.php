@@ -12,16 +12,16 @@
     <title>@yield('titre', 'Mon App')</title>
 </head>
 
-<body class="bg-blue-100 text-zinc-700 font-['Unbounded'] text-sm">
+<body class="bg-black text-zinc-100 font-['Unbounded'] text-sm">
     {{-- Top bar  --}}
-    <div class="absolute top-0 flex justify-between w-full px-5 py-3 mx-0 bg-blue-200 shadow-md">
+    <div class="absolute top-0 flex items-center justify-between w-full px-2 py-3 bg-red-800 shadow-md lg:px-5 sm:px-5">
 
         {{-- Nom de l'application --}}
-        <div class="text-xl font-black">Check-Moi ça</div>
+        <div class="text-base font-bold lg:text-xl whitespace-nowrap sm:text-xl">VOODOO-Check</div>
 
         {{-- bouton déconnexion --}}
         <div class="flex items-center self-center gap-4 ">
-            <div class="text-lg font-bold">
+            <div class="text-base lg:text-lg sm:text-lg">
                 @auth
                     {{Auth::user()->name}}
                 @endauth
@@ -29,10 +29,10 @@
             {{-- Bouton déconnexion --}}
             <a 
                 href="{{route('logout')}}" 
-                class="flex gap-1 px-2 py-1 text-white bg-red-700 rounded-sm shadow-md"
+                class="flex items-center gap-1 px-2 py-1 text-white bg-red-700 rounded-lg shadow-md"
             >
                 <span class="material-symbols-outlined">logout</span>
-                Déconnexion
+                <span class="hidden sm:block lg:block">Déconnexion</span>
             </a>
         </div>
     </div>
