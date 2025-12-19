@@ -8,7 +8,6 @@
     <h2 class="mb-4 text-2xl font-bold">Détails du projet</h2>
     <p><strong>Titre :</strong> {{ $tache->titre }}</p>
     <p><strong>Description :</strong> {{ $tache->description }}</p>
-    <p><strong>Expéditeur:</strong> {{ $tache->client }}</p>
     <p><strong>Date de debut :</strong> {{ $tache->created_at }}</p>
     <p><strong>Statut :</strong> 
         @if ($tache->statut)

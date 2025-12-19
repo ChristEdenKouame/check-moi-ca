@@ -44,11 +44,11 @@
     {{-- Header --}}
     <section class="flex flex-col items-center justify-center min-h-screen pt-20 mx-10">
         <h1 class="text-5xl font-bold text-center lg:text-6xl">
-            Organisez vos projets<br> avec 
+            Organisez vos tâches<br> avec 
             <span class="text-red-800">simplicité</span> et <span class="text-red-800">efficacité</span>
         </h1>
         <p class="pt-10 text-xl text-center ">
-            <span class="font-bold">Check-Moi ça</span> transforme la gestion de vos projets en une expérience <br>
+            <span class="font-bold">Check-Moi ça</span> transforme la gestion de vos taches en une expérience <br>
             fluide et intuitive. Créez, triez et accomplissez plus, sans effort.
         </p>
         <img src="{{asset('images/fleche.png')}}" alt="" width="45px" class="relative mt-20 animate-bounce -z-20">

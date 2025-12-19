@@ -9,10 +9,10 @@
     <form action="{{route('tache.store')}}" method="POST" >
         @csrf
         <h1 class="pb-2 text-2xl font-semibold text-red-800">
-            Création d'un nouveau projet
+            Création d'une nouvelle tache
         </h1>
 
-        <label for="titre">Nom du projet</label>
+        <label for="titre">Titre de la tache</label>
         <input 
             type="text" 
             name="titre" 
@@ -25,13 +25,6 @@
             name="description" 
             class="w-full px-3 py-2 border border-gray-500 rounded-lg ">
         </textarea>
-
-        <label for="client">Client</label>
-        <input 
-            type="text" 
-            name="client" 
-            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
-        >
 
         <input type="checkbox" name="statut">
         <label for="statut">Terminée ?</label>

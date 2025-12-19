@@ -26,7 +26,7 @@
             href="{{route('tache.create')}}" 
             class="flex items-center px-2 py-1 text-white rounded-lg shadow-md bg-red-800 whitespace-nowrap hover:scale-[1.01] duration-200">
             <span class="material-symbols-outlined">add</span>
-            Ajouter un projet
+            Ajouter une tache
         </a>
     </div>
 </div>
@@ -46,8 +46,7 @@
             <tr>
                 <th class="px-2 py-2 text-start">Titre</th>
                 <th class="px-2 py-2 text-start">Description</th>
-                <th class="px-2 py-2 text-start">Client</th>
-                <th class="px-2 py-2 text-center whitespace-nowrap">Date de debut</th>
+                <th class="px-2 py-2 text-center whitespace-nowrap">Date de Création</th>
                 <th class="px-2 text-center">Statut</th>
                 <th class="px-2 text-center">Actions</th>
             </tr>
@@ -58,11 +57,10 @@
                 <tr class="border-b border-zinc-400">
                 <td class="px-2 py-2 text-start">{{$tache->titre}}</td>
                 <td class="px-2 py-2 text-start">{{$tache->description}}</td>
-                <td class="px-2 py-2 text-start">{{$tache->client}}</td>
                 <td class="px-2 py-2 text-center">{{$tache->created_at->format('d/m/Y')}}</td>
                 <td class="px-2 py-2 text-center">
                     @if ($tache->statut == 1)
-                    <span class="px-1 py-1 text-green-200 bg-green-600 rounded-lg whitespace-nowrap">Terminée</span>
+                    <span class="px-1 py-1 text-green-200 bg-green-600 rounded-lg whitespace-nowrap">Terminé</span>
                     @else
                     <span class="px-1 py-1 text-yellow-100 bg-yellow-500 rounded-lg whitespace-nowrap">En cours</span>
                     @endif
@@ -78,7 +76,7 @@
                     
                     <a 
                         href="{{route('tache.edit', $tache->id)}}" >
-                        <span class="text-blue-600 material-symbols-outlined">edit_calendar</span>
+                        <span class="material-symbols-outlined">edit_calendar</span>
                     </a>
                     
                     <form action="{{route('tache.destroy', $tache->id)}}" method="POST">
@@ -88,7 +86,7 @@
                             type="submit" 
                             class="hover:cursor-pointer" 
                             onclick="return confirm('Voulez-vous vraiment supprimer le projet ?')">
-                            <span class="text-red-600 material-symbols-outlined">delete</span>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </form>
                 </td>
@@ -96,7 +94,7 @@
             @empty
             <tr>
                 <td colspan="10" class="py-2 text-center text-gray-400">
-                    Aucun projet
+                    Aucune tache
                 </td>
             </tr>
             @endforelse

@@ -24,8 +24,8 @@ Ici, gerez vos taches quotidiennes.</h1>
             <div class="text-center">{{$message}}</div>
         @enderror
 
-        <label for="name">Service</label>
-        <input type="text" name="name" class="w-full px-3 py-2 mb-1 border border-gray-500 rounded-lg">
+        <label for="name">Nom et prénom</label>
+        <input type="text" name="name" class="w-full px-3 py-2 mb-1 border border-gray-500 rounded-lg" placeholder="John Doe">
         
         <label for="email">Email</label>
         <input type="email" name="email" class="w-full px-3 py-2 mb-1 border border-gray-500 rounded-lg" value="{{old('email')}}">

@@ -20,6 +20,7 @@ class RegisterController extends Controller
     {
         $request->validated();
 
+        // Création d'un utilisateur
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

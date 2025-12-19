@@ -40,7 +40,6 @@ class TaskController extends Controller
         Auth::user()->taches()->create([
             'titre' => $request->titre,
             'description' => $request->description,
-            'client' => $request->client,
             'statut' => $request->statut == "on" ? 1 : 0
         ]);
 
@@ -60,7 +59,7 @@ class TaskController extends Controller
 
     /**
      * Show a specicifical resource.
-     */
+    */
     public function show(Tache $tache)
     {
         return view('taches_view.detail', compact('tache'));
@@ -76,7 +75,6 @@ class TaskController extends Controller
         $tache->update([
             'titre' => $request->titre,
             'description' => $request->description,
-            'client' => $request->client,
             'statut' => $request->statut == "on" ? 1 : 0
         ]);
 
