@@ -16,7 +16,7 @@
     <div class="absolute top-0 flex items-center justify-between w-full px-2 py-3 bg-red-800 shadow-md lg:px-5 sm:px-5">
 
         {{-- Nom de l'application --}}
-        <div class="text-base font-bold lg:text-xl whitespace-nowrap sm:text-xl">VOODOO-Check</div>
+        <div class="text-base font-bold lg:text-xl whitespace-nowrap sm:text-xl">Check_moi ça</div>
 
         {{-- bouton déconnexion --}}
         <div class="flex items-center self-center gap-4 ">

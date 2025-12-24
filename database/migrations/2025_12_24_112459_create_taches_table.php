@@ -16,9 +16,13 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->text('description');
-            $table->tinyInteger('statut');
-            $table->timestamps();
+            $table->string('priorite');
+            $table->date('deadline');
+            $table->tinyInteger('statut')->nullable();
+
+            // Relation avec la table users
             $table->foreignIdFor(User::class)->nullable()->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

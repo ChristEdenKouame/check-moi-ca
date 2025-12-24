@@ -28,15 +28,26 @@
             class="w-full px-3 py-2 border border-gray-500 rounded-lg ">{{old('description',$tache->description)}}
         </textarea>
 
-        <label for="client">Client</label>
-        <input 
-            type="text"  
-            name="client" 
-            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg" 
-            value="{{old('titre', $tache->client)}}"
-        >
-
-        <input type="checkbox" {{ $tache->statut ? 'checked' : ""}} name="statut">
+        <div class="flex flex-col gap-1 pt-2">
+            <label for="priorite" >Priorité</label>
+            <select name="priorite" class="w-full px-3 py-2 border border-gray-500 rounded-lg">
+                <option value="faible" class="bg-black" {{ old('priorite', $tache->priorite) == 'faible' ? 'selected' : '' }}>Faible</option>
+                <option value="moyenne" class="bg-black" {{ old('priorite', $tache->priorite) == 'moyenne' ? 'selected' : '' }}>Moyenne</option>
+                <option value="urgente" class="bg-black" {{ old('priorite', $tache->priorite) == 'urgente' ? 'selected' : '' }}>Urgente</option>
+            </select>
+        </div>
+        
+        <div class="flex flex-col gap-1 pt-2">
+            <label for="deadline">Date limite</label>
+            <input 
+                    type="date" 
+                    name="deadline" 
+                    value="{{old('deadline', $tache->deadline)->format('Y-m-d')}}"
+                    class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
+            >
+        </div>
+        
+        <input type="checkbox" name="statut">
         <label for="statut">Terminée ?</label>
         <br>
 

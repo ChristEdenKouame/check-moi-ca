@@ -19,7 +19,7 @@
     <div class="fixed top-0 flex items-center justify-between w-full px-5 py-3 mx-5 text-sm bg-red-800 shadow-md lg:mx-10">
 
         {{-- Nom de l'application --}}
-        <div class="text-xl font-bold whitespace-nowrap">VOODOO-Check</div>
+        <div class="text-xl font-bold whitespace-nowrap">Check_moi ça</div>
 
         {{-- Bouton déconnexion --}}
         <div class="flex items-center gap-2 lg:gap-4">
@@ -78,7 +78,7 @@
                 <span class="text-xl font-bold whitespace-nowrap">Filtre intelligent</span>
                 <p class="">
                     Filtrez et recherchez <br>
-                    vos projets en un clic
+                    vos tâches en un clic
                 </p>
             </div>
             

@@ -12,24 +12,42 @@
             Création d'une nouvelle tache
         </h1>
 
-        <label for="titre">Titre de la tache</label>
-        <input 
-            type="text" 
-            name="titre" 
-            class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
-        >
+        <div class="flex flex-col gap-1">
+            <label for="titre">Titre de la tache</label>
+            <input 
+                type="text" 
+                name="titre" 
+                class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
+            >
+        </div>
 
-        <label for="description">Description</label>
-        <textarea 
-            type="text"  
-            name="description" 
-            class="w-full px-3 py-2 border border-gray-500 rounded-lg ">
-        </textarea>
-
-        <input type="checkbox" name="statut">
-        <label for="statut">Terminée ?</label>
-        <br>
-
+        <div class="flex flex-col gap-1">
+            <label for="description">Description</label>
+            <textarea 
+                type="text"  
+                name="description" 
+                class="w-full px-3 py-2 border border-gray-500 rounded-lg ">
+            </textarea>
+        </div>
+        
+        <div class="flex flex-col gap-1 pt-2">
+            <label for="priorite" >Priorité</label>
+            <select name="priorite" id="" class="w-full px-3 py-2 border border-gray-500 rounded-lg">
+                <option value="faible" class="bg-black">Faible</option>
+                <option value="moyenne" class="bg-black">Moyenne</option>
+                <option value="urgente" class="bg-black">Urgente</option>
+            </select>
+        </div>
+        
+        <div class="flex flex-col gap-1 pt-3 pb-2">
+            <label for="deadline">Date limite</label>
+            <input 
+                type="date" 
+                name="deadline" 
+                class="w-full px-3 py-2 mb-3 border border-gray-500 rounded-lg "
+            >
+        </div>
+        
         <button 
             type="submit" 
             class="w-32 py-1 text-white bg-red-800 rounded-lg hover:cursor-pointer"
@@ -39,7 +57,7 @@
 
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 mt-4 text-center text-white bg-red-800 rounded-lg">
+            class="inline-block w-32 py-1 text-center text-white bg-red-800 rounded-lg">
             Accueil
         </a>
     </form>

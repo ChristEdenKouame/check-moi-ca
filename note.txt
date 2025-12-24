@@ -12,11 +12,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('taches', function (Blueprint $table) {
-            $table->foreignIdFor(User::class)
-                ->nullable()
-                ->constrained()
-                ->onDelete('cascade');
+        Schema::create('taches', function (Blueprint $table) {
+            $table->id();
+            $table->string('titre');
+            $table->text('description');
+            $table->string('priorite');
+            $table->date('deadline');
+            $table->tinyInteger('statut')->nullable();
+            $table->timestamps();
+
+            // Relation avec la table users
+            $table->foreignIdFor(User::class)->nullable()->constrained()->onDelete('cascade');
         });
     }
 
@@ -25,8 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('taches', function (Blueprint $table) {
-            $table->dropForeignIdFor(User::class);
-        });
+        Schema::dropIfExists('taches');
     }
 };

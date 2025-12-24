@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,10 +14,16 @@ class Tache extends Model
     protected $fillable = [
         'titre',
         'description',
-        // 'expediteur',
-        'client',
+        'deadline',
+        'priorite',
         'statut',
+
+        //Clé étrangere de la table users
         'user_id'
+    ];
+
+    protected $casts = [
+        'deadline' => 'date',
     ];
 
     public function user(): BelongsTo

@@ -24,7 +24,8 @@ class TacheRequest extends FormRequest
         return [
             'titre' => ['string', 'max:200', 'required'],
             'description' => ['string', 'max:500', 'required'],
-            'client' => ['string', 'max:200', 'nullable'],
+            'priorite' => ['string',],
+            'deadline' => ['date', 'after_or_equal:today'],
         ];
     }
 

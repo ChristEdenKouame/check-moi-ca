@@ -17,7 +17,13 @@ class TaskController extends Controller
     {
         // $taches = Auth::user()->taches;  
         $taches = Tache::where('user_id', Auth::id())->get();
-        return view('taches_view.index', compact('taches'));
+        $taches_encours = Tache::where('statut', 1)->count();
+        $total_taches = Tache::count();
+        return view('taches_view.index', compact([
+            'taches',
+            'taches_encours',
+            'total_taches'
+        ]));
     }
 
     /**
@@ -40,11 +46,12 @@ class TaskController extends Controller
         Auth::user()->taches()->create([
             'titre' => $request->titre,
             'description' => $request->description,
-            'statut' => $request->statut == "on" ? 1 : 0
+            'priorite' => $request->priorite,
+            'deadline' => $request->deadline,
         ]);
 
         return redirect()->route('index')->with([
-            'message' => 'Projet enregistrée : ',
+            'message' => 'Tâche enregistrée : ',
             'tache' => $request->titre
         ]);
     }
@@ -59,7 +66,7 @@ class TaskController extends Controller
 
     /**
      * Show a specicifical resource.
-    */
+     */
     public function show(Tache $tache)
     {
         return view('taches_view.detail', compact('tache'));
@@ -75,6 +82,8 @@ class TaskController extends Controller
         $tache->update([
             'titre' => $request->titre,
             'description' => $request->description,
+            'priorite' => $request->priorite,
+            'deadline' => $request->deadline,
             'statut' => $request->statut == "on" ? 1 : 0
         ]);
 
