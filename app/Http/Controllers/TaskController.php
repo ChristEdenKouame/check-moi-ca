@@ -17,8 +17,8 @@ class TaskController extends Controller
     {
         // $taches = Auth::user()->taches;  
         $taches = Tache::where('user_id', Auth::id())->get();
-        $taches_encours = Tache::where('statut', 1)->count();
-        $total_taches = Tache::count();
+        $taches_encours = Tache::where('user_id', Auth::id())->where('statut', 1)->count();
+        $total_taches = Tache::where('user_id', Auth::id())->count();
         return view('taches_view.index', compact([
             'taches',
             'taches_encours',
@@ -43,11 +43,13 @@ class TaskController extends Controller
         //Validation des informations du formulaire
         $request->validated();
 
+        // Insertion dans la table users
         Auth::user()->taches()->create([
             'titre' => $request->titre,
             'description' => $request->description,
             'priorite' => $request->priorite,
             'deadline' => $request->deadline,
+            'statut' =>  0,
         ]);
 
         return redirect()->route('index')->with([
@@ -138,6 +140,7 @@ class TaskController extends Controller
 
         return view('taches_view.index', compact('taches'));
     }
+
     /**
      * Display current tasks.
      */

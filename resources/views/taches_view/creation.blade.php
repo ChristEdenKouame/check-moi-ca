@@ -8,7 +8,7 @@
 <div class="items-center justify-center px-10 py-3 mx-10 mt-20 border rounded-lg shadow-lg xl:mx-25 border-zinc-400">
     <form action="{{route('tache.store')}}" method="POST" >
         @csrf
-        <h1 class="pb-2 text-2xl font-semibold text-red-800">
+        <h1 class="pb-2 text-2xl font-semibold ">
             Création d'une nouvelle tache
         </h1>
 
@@ -50,14 +50,14 @@
         
         <button 
             type="submit" 
-            class="w-32 py-1 text-white bg-red-800 rounded-lg hover:cursor-pointer"
+            class="w-32 py-1 text-white bg-gray-800 rounded-lg hover:cursor-pointer"
         >
             Ajouter
         </button>
 
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 text-center text-white bg-red-800 rounded-lg">
+            class="inline-block w-32 py-1 text-center text-white bg-gray-800 rounded-lg">
             Accueil
         </a>
     </form>

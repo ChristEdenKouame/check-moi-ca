@@ -11,9 +11,9 @@
     <title>@yield('titre', 'Mon App')</title>
 </head>
 
-<body class="bg-black text-zinc-100 font-['Unbounded'] text-sm">
+<body class="bg-blue-100 font-['Unbounded'] text-sm">
     {{-- Top bar  --}}
-    <div class="absolute top-0 flex items-center justify-between w-full px-2 py-3 bg-red-800 shadow-md lg:px-5 sm:px-5">
+    <div class="absolute top-0 flex items-center justify-between w-full px-2 py-3 bg-blue-200 shadow-md lg:px-5 sm:px-5">
 
         {{-- Nom de l'application --}}
         <div class="text-base font-bold lg:text-xl whitespace-nowrap sm:text-xl">Check_moi ça</div>
@@ -28,7 +28,7 @@
             {{-- Bouton déconnexion --}}
             <a 
                 href="{{route('logout')}}" 
-                class="flex items-center gap-1 px-2 py-1 text-white bg-red-700 rounded-lg shadow-md"
+                class="flex items-center gap-1 px-2 py-1 text-white bg-gray-800 rounded-lg shadow-md"
             >
                 <span class="material-symbols-outlined">logout</span>
                 <span class="hidden sm:block lg:block">Déconnexion</span>

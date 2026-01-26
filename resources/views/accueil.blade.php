@@ -13,10 +13,10 @@
     <title>@yield('titre', 'Accueil')</title>
 </head>
 
-<body class="flex flex-col items-center justify-center bg-black text-zinc-100 font-['Unbounded'] text-sm">
+<body class="flex flex-col items-center justify-center bg-blue-100 font-['Unbounded'] text-sm">
 
     {{-- Top bar --}}
-    <div class="fixed top-0 flex items-center justify-between w-full px-5 py-3 mx-5 text-sm bg-red-800 shadow-md lg:mx-10">
+    <div class="fixed top-0 flex items-center justify-between w-full px-5 py-3 mx-5 text-sm bg-blue-200 shadow-md lg:mx-10">
 
         {{-- Nom de l'application --}}
         <div class="text-xl font-bold whitespace-nowrap">Check_moi ça</div>
@@ -33,7 +33,7 @@
             </a>
             <a 
                 href="{{route('sign-up')}}" 
-                class="flex items-center gap-2 px-2 py-2 text-white bg-red-700 rounded-lg shadow-md whitespace-nowrap"
+                class="flex items-center gap-2 px-2 py-2 text-white bg-blue-500 rounded-lg shadow-md whitespace-nowrap"
             >
                 <span class="material-symbols-outlined">person_add</span>
                 <span class="hidden sm:block lg:block">Créer un compte</span>
@@ -42,19 +42,19 @@
     </div>
 
     {{-- Header --}}
-    <section class="flex flex-col items-center justify-center min-h-screen pt-20 mx-10">
-        <h1 class="text-5xl font-bold text-center lg:text-6xl">
+    <section class="flex flex-col items-center justify-center min-h-screen mx-10 lg:pt-20">
+        <h1 class="text-4xl font-bold text-center lg:text-6xl">
             Organisez vos tâches<br> avec 
-            <span class="text-red-800">simplicité</span> et <span class="text-red-800">efficacité</span>
+            <span class="text-blue-400">simplicité</span> et <span class="text-blue-400">efficacité</span>
         </h1>
-        <p class="pt-10 text-xl text-center ">
+        <p class="pt-10 text-center text-md lg:text-xl">
             <span class="font-bold">Check-Moi ça</span> transforme la gestion de vos taches en une expérience <br>
             fluide et intuitive. Créez, triez et accomplissez plus, sans effort.
         </p>
-        <img src="{{asset('images/fleche.png')}}" alt="" width="45px" class="relative mt-20 animate-bounce -z-20">
+        <img src="{{asset('images/fleche.png')}}" alt="" width="45px" class="relative mt-5 lg:mt-20 animate-bounce -z-20">
         <a 
             href="{{route('login')}}"
-            class="px-2 mt-2 py-2 text-sm  text-white duration-200 bg-red-800 rounded-lg hover:shadow-2xl hover:scale-[1.01]"
+            class="px-2 mt-2 py-2 text-sm text-white duration-200 bg-gray-900 rounded-lg hover:shadow-2xl hover:scale-[1.01]"
             >
             Commencez maintenant !
         </a>
@@ -64,8 +64,8 @@
     <section class="flex items-center justify-center mx-10" >
         
         <div class="grid grid-cols-1 gap-10 py-10 lg:grid-cols-3 sm:grid-cols-2">
-            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-100 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
-                <span class="p-2 text-red-800 bg-red-300 rounded-lg material-symbols-outlined">checklist</span>
+            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-900 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
+                <span class="p-2 text-gray-800 bg-gray-300 rounded-lg material-symbols-outlined">checklist</span>
                 <span class="text-xl font-bold whitespace-nowrap">Gestion complète</span>
                 <p class="">
                     Créez, modifiez et supprimez <br>
@@ -73,8 +73,8 @@
                 </p>
             </div>
             
-            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-100 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
-                <span class="p-2 text-red-800 bg-red-300 rounded-lg material-symbols-outlined">filter_alt</span>
+            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-900 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
+                <span class="p-2 text-gray-800 bg-gray-300 rounded-lg material-symbols-outlined">filter_alt</span>
                 <span class="text-xl font-bold whitespace-nowrap">Filtre intelligent</span>
                 <p class="">
                     Filtrez et recherchez <br>
@@ -82,8 +82,8 @@
                 </p>
             </div>
             
-            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-100 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
-                <span class="p-2 text-red-800 bg-red-300 rounded-lg material-symbols-outlined">mindfulness</span>
+            <div class="flex flex-col items-center justify-center gap-3 px-15 py-8 text-center border border-zinc-900 rounded-2xl hover:scale-[1.01] hover:shadow-2xl duration-200 ">
+                <span class="p-2 text-gray-800 bg-gray-300 rounded-lg material-symbols-outlined">mindfulness</span>
                 <span class="text-xl font-bold whitespace-nowrap">Interface épurée</span>
                 <p class="">
                     Design minimaliste pour <br>

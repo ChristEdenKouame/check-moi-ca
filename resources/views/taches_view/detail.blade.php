@@ -18,12 +18,12 @@
     </p>
     <a 
         href="{{ route('tache.edit', $tache->id) }}" 
-        class="inline-block w-32 py-1 mt-4 font-semibold text-center text-white bg-red-800 rounded-lg">
+        class="inline-block w-32 py-1 mt-4 font-semibold text-center text-white bg-gray-900 rounded-lg">
         Modifier
     </a>
     <a 
         href="{{ route('index') }}"     
-        class="inline-block w-32 py-1 mt-4 font-semibold text-center text-white bg-red-800 rounded-lg">
+        class="inline-block w-32 py-1 mt-4 font-semibold text-center text-white bg-gray-900 rounded-lg">
         Accueil
     </a>
 </div>

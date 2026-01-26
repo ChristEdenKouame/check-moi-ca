@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('titre');
             $table->text('description');
             $table->string('priorite');
-            $table->date('deadline');
+            $table->date('deadline')->nullable();
             $table->tinyInteger('statut')->nullable();
 
             // Relation avec la table users

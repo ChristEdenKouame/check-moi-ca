@@ -9,7 +9,7 @@
     <form action="{{route('tache.update', $tache->id)}}" method="POST">
         @csrf
         @method('PUT')
-        <h1 class="pb-2 text-2xl font-semibold text-red-700">
+        <h1 class="pb-2 text-2xl font-semibold ">
             Modification d'une tache
         </h1>
 
@@ -51,13 +51,13 @@
         <label for="statut">Terminée ?</label>
         <br>
 
-        <button type="submit" class="w-32 py-1 text-white bg-red-800 rounded-lg cursor-pointer ">
+        <button type="submit" class="w-32 py-1 text-white bg-gray-900 rounded-lg cursor-pointer ">
             Modifier
         </button>
         
         <a 
             href="{{ route('index') }}" 
-            class="inline-block w-32 py-1 mt-4 text-center text-white bg-red-800 rounded-lg">
+            class="inline-block w-32 py-1 mt-4 text-center text-white bg-gray-900 rounded-lg">
             Retour
         </a>
     </form>
